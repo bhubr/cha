@@ -1,14 +1,14 @@
 import React from 'react';
 import './Contact.css';
 
-const Contact = () => (
+const Contact = ({ name, avatar, online }) => (
   <div className="Contact">
-    <img className="avatar" src="https://randomuser.me/api/portraits/men/28.jpg" />
+    <img className="avatar" src={avatar} />
     <div>
-      <div className="name">Robert Reyes</div>
+      <div className="name">{name}</div>
         <div className="status">
-          <span className="status-online"></span>
-          <div className="status-text">online</div>
+          <span className={`status-${online ? 'online' : 'offline'}`}></span>
+          <div className="status-text">{online ? 'online' : 'offline'}</div>
         </div>
     </div>
   </div>
